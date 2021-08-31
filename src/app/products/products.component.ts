@@ -9,13 +9,11 @@ import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 })
 export class ProductsComponent implements OnInit {
 public products;
+public title;
   constructor(public catService:CatalogueService,
   public route:ActivatedRoute, private router: Router) {
 
     }
-
-
-
 
   ngOnInit(): void {
 
@@ -36,17 +34,17 @@ public products;
 
           let idCat=this.route.snapshot.params.p2;
           this.getProducts('/categories/'+idCat+'/products');
-
-
         }
-
-
       }
-    });
+    })
     let p1=this.route.snapshot.params.p1;
     if(p1==1){
 
       this.getProducts('/products');
+    }  else if(p1==2) {
+
+      let idCat=this.route.snapshot.params.p2;
+      this.getProducts('/categories/'+idCat+'/products');
     }
 
   }
@@ -57,5 +55,6 @@ private getProducts(url){
       },err=>{
         console.log(err);
       })
+  this.title=this.products.name+'products';
 }
 }
