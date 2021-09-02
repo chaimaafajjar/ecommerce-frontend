@@ -41,6 +41,7 @@ public title;
     if(p1==1){
 
       this.getProducts('/products');
+
     }  else if(p1==2) {
 
       let idCat=this.route.snapshot.params.p2;
@@ -55,6 +56,8 @@ private getProducts(url){
       },err=>{
         console.log(err);
       })
-  this.title=this.products.name+'products';
+
+
 }
+
 }
