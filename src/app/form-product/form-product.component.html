@@ -1,0 +1,49 @@
+<div class="form-group">
+  <label for="name">Name</label>
+  <input type="text" class="form-control" id="name"
+         required
+         [(ngModel)]="product.name" name="name">
+</div>
+
+<div class="form-group">
+  <label for="description">Description</label>
+  <input type="text"  class="form-control" id="description"
+         [(ngModel)]="product.description" name="description">
+</div>
+<div class="form-group">
+  <label for="currentprice">Current Price</label>
+  <input type="text"  class="form-control" id="currentprice"
+         [(ngModel)]="product.currentprice" name="currentprice">
+</div>
+
+<div class="form-group">
+  <label for="promotion">promotion</label>
+  <input type="text"  class="form-control" id="promotion"
+         [(ngModel)]="product.promotion" name="promotion">
+</div>
+
+<div class="form-group">
+  <label for="selected">selected</label>
+  <input type="text"  class="form-control" id="selected"
+         [(ngModel)]="product.selected" name="selected">
+</div>
+
+<div class="form-group">
+  <label for="available">available</label>
+  <input type="text"  class="form-control" id="available"
+         [(ngModel)]="product.available" name="available">
+</div>
+
+<div class="form-group">
+  <label for="photoName">photoName</label>
+  <input type="text"  class="form-control" id="photoName"
+         [(ngModel)]="product.photoName" name="photoName">
+</div>
+
+
+
+<button *ngIf="isUpdate" type="button" class="btn btn-default" (click)="updateProduct()">Update Product</button>
+
+<button *ngIf="isUpdate" type="button" class="btn btn-default" (click)="deleteProduct()">Delete Product</button>
+
+<button *ngIf="!isUpdate" type="button" class="btn btn-default" (click)="createProduct()">New Product</button>

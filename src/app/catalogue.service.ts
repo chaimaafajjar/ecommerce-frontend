@@ -12,4 +12,23 @@ public host: string="http://localhost:8080"
   public getResource(url){
       return this.http.get(this.host+url);
   }
+
+  public createResource(url,body){
+    console.log("hello");
+    console.log(body);
+  return this.http.post(this.host+url,body)
+    console.log(body);
+  }
+
+  public updateResource(url,body){
+   return this.http.put(this.host+url,body)
+  }
+
+  public deleteResource(url){
+  return this.http.delete(this.host+url)
+  }
+
+
+
+
 }
