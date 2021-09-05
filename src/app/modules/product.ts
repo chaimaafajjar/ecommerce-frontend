@@ -11,5 +11,7 @@ export class Product {
   public  selected:boolean;
   public available:boolean;
   public  photoName:String;
+  public category:Category;
+
 
 }

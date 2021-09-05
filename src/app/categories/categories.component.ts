@@ -12,10 +12,13 @@ export class CategoriesComponent implements OnInit {
   public categories;
   public currentCategorie;
 
+
+
   constructor(public catService:CatalogueService , private router:Router) { }
 
   ngOnInit(): void {
     this.getCategories();
+
   }
 
   public getCategories() {
@@ -29,11 +32,16 @@ export class CategoriesComponent implements OnInit {
 
   }
 
+  ModifyCategory(c) {
+    this.router.navigateByUrl("/formcategories/update/"+c.id);
+  }
+
 
 
   getProductsByCat(c){
     this.currentCategorie=c;
     this.router.navigateByUrl('/products/2/'+c.id);
   }
+
 
 }

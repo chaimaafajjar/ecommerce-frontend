@@ -39,8 +39,15 @@
   <input type="text"  class="form-control" id="photoName"
          [(ngModel)]="product.photoName" name="photoName">
 </div>
-
-
+<div class="form-group">
+  <label for="chosenCategory">Category</label>
+  <select class="form-control"  id="chosenCategory"
+          required
+          [(ngModel)]="idChosenCategory" name="chosenCategory"
+          (change)="getCategoryById(idChosenCategory)" [value]='category.id'>
+    <option *ngFor="let c of categorie?._embedded?.categories" [value]="c.id">{{c.name}}</option>
+  </select>
+</div>
 
 <button *ngIf="isUpdate" type="button" class="btn btn-default" (click)="updateProduct()">Update Product</button>
 
