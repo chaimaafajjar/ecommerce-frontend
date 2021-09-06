@@ -60,4 +60,12 @@ private getProducts(url){
 
 }
 
+  AddProduct() {
+    this.router.navigateByUrl("/formproducts/add/"+1);
+  }
+
+  ModifyProduct(p) {
+    this.router.navigateByUrl("/formproducts/update/"+p.id);
+
+  }
 }

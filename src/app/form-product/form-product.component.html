@@ -49,8 +49,8 @@
   </select>
 </div>
 
-<button *ngIf="isUpdate" type="button" class="btn btn-default" (click)="updateProduct()">Update Product</button>
+<button *ngIf="isUpdate" type="button" class="btn btn-success" (click)="updateProduct()">Update Product</button>
 
-<button *ngIf="isUpdate" type="button" class="btn btn-default" (click)="deleteProduct()">Delete Product</button>
+<button *ngIf="isUpdate" type="button" class="btn btn-danger" (click)="deleteProduct()">Delete Product</button>
 
-<button *ngIf="!isUpdate" type="button" class="btn btn-default" (click)="createProduct()">New Product</button>
+<button *ngIf="!isUpdate" type="button" class="btn btn-success" (click)="createProduct()">New Product</button>

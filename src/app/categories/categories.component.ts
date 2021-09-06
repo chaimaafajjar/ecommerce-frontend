@@ -11,6 +11,7 @@ export class CategoriesComponent implements OnInit {
 
   public categories;
   public currentCategorie;
+  public nb:number;
 
 
 
@@ -27,7 +28,9 @@ export class CategoriesComponent implements OnInit {
     },err=>{
       console.log(err);
 
+
     })
+
 
 
   }
@@ -44,4 +47,7 @@ export class CategoriesComponent implements OnInit {
   }
 
 
+  AddCategory() {
+    this.router.navigateByUrl("/formcategories/add/"+1);
+  }
 }

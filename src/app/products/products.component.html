@@ -1,3 +1,6 @@
+<div class="bouton">
+  <button type="button" class="btn btn-default" (click)="AddProduct()">Add</button>
+</div>
 <h3 class="titre"> {{title}} </h3>
 <div *ngIf="products">
 <div class="container page-wrapper">
@@ -27,6 +30,9 @@
             </span>
           </a>
         </div>
+
+        <button class="bouton" type="button" class="btn btn-success" (click)="ModifyProduct(p)">Modify</button>
+
       </div>
     </div>
   </div>
