@@ -1,5 +1,7 @@
 <div class="bouton">
+  <div *ngIf="authService.isAdmin()">
   <button type="button" class="btn btn-default" (click)="AddProduct()">Add</button>
+  </div>
 </div>
 <h3 class="titre"> {{title}} </h3>
 <div *ngIf="products">
@@ -30,9 +32,10 @@
             </span>
           </a>
         </div>
+        <div *ngIf="authService.isAdmin()">
 
         <button class="bouton" type="button" class="btn btn-success" (click)="ModifyProduct(p)">Modify</button>
-
+        </div>
       </div>
     </div>
   </div>

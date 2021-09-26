@@ -1,6 +1,8 @@
 
 <div class="bouton">
+  <div *ngIf="authService.isAdmin()">
   <button type="button" class="btn btn-default" (click)="AddCategory()">Add</button>
+  </div>
 </div>
 <h3 class="titre"> Categories</h3>
 <div *ngIf="categories">
@@ -14,7 +16,9 @@
         <div class="team-content">
           <h3 class="name">{{c.name}}</h3>
           <h4 class="decription">{{c.description}}</h4>
+          <div *ngIf="authService.isAdmin()">
           <button type="button" class="btn btn-success" (click)="ModifyCategory(c)">Modify</button>
+          </div>
 
         </div>
       </div>

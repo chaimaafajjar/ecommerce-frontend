@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CatalogueService} from "../catalogue.service";
 import {Router} from "@angular/router";
+import {AuthenticationService} from "../services/authentication.service";
 
 @Component({
   selector: 'app-categories',
@@ -15,7 +16,7 @@ export class CategoriesComponent implements OnInit {
 
 
 
-  constructor(public catService:CatalogueService , private router:Router) { }
+  constructor(public catService:CatalogueService , private router:Router, public authService:AuthenticationService) { }
 
   ngOnInit(): void {
     this.getCategories();

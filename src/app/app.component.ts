@@ -20,4 +20,8 @@ ngOnInit():void{
 
     this.router.navigateByUrl("/categories");
   }
+
+  onLogout() {
+     this.router.navigateByUrl('/login');
+  }
 }

@@ -9,6 +9,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { FormCategoryComponent } from './form-category/form-category.component';
 import {FormsModule} from "@angular/forms";
 import { FormProductComponent } from './form-product/form-product.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormProductComponent } from './form-product/form-product.component';
     ProductsComponent,
     CategoriesComponent,
     FormCategoryComponent,
-    FormProductComponent
+    FormProductComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

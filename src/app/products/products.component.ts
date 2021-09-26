@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CatalogueService} from "../catalogue.service";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
+import {AuthenticationService} from "../services/authentication.service";
 
 @Component({
   selector: 'app-products',
@@ -11,7 +12,7 @@ export class ProductsComponent implements OnInit {
 public products;
 public title;
   constructor(public catService:CatalogueService,
-  public route:ActivatedRoute, private router: Router) {
+  public route:ActivatedRoute, private router: Router, public authService:AuthenticationService) {
 
     }
 
