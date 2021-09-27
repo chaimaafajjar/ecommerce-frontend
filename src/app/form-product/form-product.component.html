@@ -1,56 +1,86 @@
-<div class="form-group">
-  <label for="name">Name</label>
-  <input type="text" class="form-control" id="name"
-         required
-         [(ngModel)]="product.name" name="name">
+
+<div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Product Space</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+    <div class="login-form">
+      <div class="sign-in-htm">
+        <div class="group">
+          <label for="name" class="label">Name</label>
+          <input id="name" type="text" class="input"
+                 required
+                 [(ngModel)]="category.name" name="name">
+        </div>
+        <div class="group">
+          <label for="description" class="label">Description</label>
+          <input id="description" type="text" class="input"
+                 required
+                 [(ngModel)]="category.description" name="description">
+        </div>
+        <div class="group">
+          <label for="currentprice" class="label">Current Price</label>
+          <input id="currentprice" type="text" class="input"
+                 required
+                 [(ngModel)]="product.currentprice" name="currentprice">
+        </div>
+        <div class="group">
+          <label for="promotion" class="label"> promotion</label>
+          <input id="promotion" type="text" class="input"
+                 required
+                 [(ngModel)]="product.promotion" name="promotion">
+        </div>
+        <div class="group">
+          <label for="selected" class="label"> selected</label>
+          <input id="selected" type="text" class="input"
+                 required
+                 [(ngModel)]="product.selected" name="selected">
+        </div>
+        <div class="group">
+          <label for="available" class="label"> available</label>
+          <input id="available" type="text" class="input"
+                 required
+                 [(ngModel)]="product.available" name="available">
+        </div>
+        <div class="group">
+          <label for="photoName" class="label">photoName</label>
+          <input id="photoName" type="text" class="input"
+                 required
+                 [(ngModel)]="product.photoName" name="photoName">
+        </div>
+        <div class="group">
+          <label for="chosenCategory" class="label">Category</label>
+
+          <select class="form-control"  id="chosenCategory"
+                  required
+                  [(ngModel)]="idChosenCategory" name="chosenCategory"
+                  (change)="getCategoryById(idChosenCategory)" [value]='category.id'>
+            <option *ngFor="let c of categorie?._embedded?.categories" [value]="c.id">{{c.name}}</option>
+          </select>
+        </div>
+
+        <div class="group">
+          <input *ngIf="isUpdate" type="submit" class="button" (click)="updateProduct()" value="Update Category">
+        </div>
+        <div class="group">
+          <input *ngIf="isUpdate" type="submit" class="button" (click)="deleteProduct()"value="Delete Category">
+        </div>
+        <div class="group">
+          <input *ngIf="!isUpdate" type="submit" class="button" (click)="createProduct()" value="New Category">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <a href="#forgot">With Love!!</a>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+  </div>
 </div>
 
-<div class="form-group">
-  <label for="description">Description</label>
-  <input type="text"  class="form-control" id="description"
-         [(ngModel)]="product.description" name="description">
-</div>
-<div class="form-group">
-  <label for="currentprice">Current Price</label>
-  <input type="text"  class="form-control" id="currentprice"
-         [(ngModel)]="product.currentprice" name="currentprice">
-</div>
 
-<div class="form-group">
-  <label for="promotion">promotion</label>
-  <input type="text"  class="form-control" id="promotion"
-         [(ngModel)]="product.promotion" name="promotion">
-</div>
 
-<div class="form-group">
-  <label for="selected">selected</label>
-  <input type="text"  class="form-control" id="selected"
-         [(ngModel)]="product.selected" name="selected">
-</div>
 
-<div class="form-group">
-  <label for="available">available</label>
-  <input type="text"  class="form-control" id="available"
-         [(ngModel)]="product.available" name="available">
-</div>
-
-<div class="form-group">
-  <label for="photoName">photoName</label>
-  <input type="text"  class="form-control" id="photoName"
-         [(ngModel)]="product.photoName" name="photoName">
-</div>
-<div class="form-group">
-  <label for="chosenCategory">Category</label>
-  <select class="form-control"  id="chosenCategory"
-          required
-          [(ngModel)]="idChosenCategory" name="chosenCategory"
-          (change)="getCategoryById(idChosenCategory)" [value]='category.id'>
-    <option *ngFor="let c of categorie?._embedded?.categories" [value]="c.id">{{c.name}}</option>
-  </select>
-</div>
-
-<button *ngIf="isUpdate" type="button" class="btn btn-success" (click)="updateProduct()">Update Product</button>
-
-<button *ngIf="isUpdate" type="button" class="btn btn-danger" (click)="deleteProduct()">Delete Product</button>
-
-<button *ngIf="!isUpdate" type="button" class="btn btn-success" (click)="createProduct()">New Product</button>
